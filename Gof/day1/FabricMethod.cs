@@ -38,6 +38,9 @@ namespace learning2022.gof
 
     }
 
+    enum Products { A, B}
+
+
 
 
 

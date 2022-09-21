@@ -15,7 +15,22 @@ namespace learning2022.gof
         static void testFabricMethod() {
 
             new ProductCreatorA().makeProduct();
-                new ProductCreatorB().makeProduct();
+            new ProductCreatorB().makeProduct();
+
+            Products products = Products.A;
+
+            switch (products) { 
+            
+            case Products.A:
+                    new ProductCreatorA().makeProduct();
+                    break;
+
+            case Products.B:
+                    new ProductCreatorB().makeProduct();
+                    break;
+
+                default: break;        
+            }
 
 
         }
