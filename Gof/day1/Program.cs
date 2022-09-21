@@ -1,16 +1,23 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+
+using learning2022.gof.af;
+
+
+
+
+
 namespace learning2022.gof
 {
     class GofTest {
 
-        public static void Main(String[] args)
-        {
+        //public static void Main(String[] args)
+        //{
 
-            Console.WriteLine("Hello, GOF!");
-            testFabricMethod();
+        //    Console.WriteLine("Hello, GOF!");
+        //    testFabricMethod();
 
-        }
+        //}
 
         static void testFabricMethod() {
 
