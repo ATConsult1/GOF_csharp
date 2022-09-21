@@ -8,6 +8,18 @@ namespace learning2022.gof
         {
 
             Console.WriteLine("Hello, GOF!");
+            testFabricMethod();
+
         }
+
+        static void testFabricMethod() {
+
+            new ProductCreatorA().makeProduct();
+                new ProductCreatorB().makeProduct();
+
+
+        }
+
+
   }
 }
