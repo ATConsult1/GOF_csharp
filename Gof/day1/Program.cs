@@ -21,6 +21,7 @@ namespace learning2022.gof
         {
             if (N <= 0 || N > 120) N = 70;
             if (s == null) { WriteLine(ch, N); return; }
+            s = s.Substring(0, N);
 
             int L = s.Length;
             int chL= ch.Length;
@@ -34,12 +35,14 @@ namespace learning2022.gof
         {
             Console.WriteLine("GOF patterns test #1");
 
-             echo("Fabric method");
+            echo("Fabric method");
             testFabricMethod();
-             echo("Abstract Fabric");
+            
+            echo("Abstract Fabric");
             testAbstractFabric(new ConcreteFactory1());
             testAbstractFabric(new ConcreteFactory2());
-             echo("Singleton");
+            
+            echo("Singleton");
             testSingleton();
         }
 
