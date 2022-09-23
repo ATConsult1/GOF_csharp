@@ -27,7 +27,7 @@ namespace andestech.learning2022.gof
             int chL = ch.Length;
             string half = multString(ch, (N - L) / 2 / chL);
 
-            if (N - L >= 4 * chL) WriteLine($"{half} {s} {half}");
+            if (N - L >= chL*2 + 2) WriteLine($"{half} {s} {half}");
             else WriteLine(s);
         }
 
