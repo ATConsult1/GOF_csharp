@@ -7,9 +7,11 @@ using brd = learning2022.gof.bridge;
 using cst = learning2022.gof.composite;
 using en = learning2022.gof.enumerator;
 using it = learning2022.gof.iterator;
+using obs = learning2022.gof.observer;
 using learning2022.gof.bridge;
 using learning2022.gof.composite;
 using learning2022.gof.iterator;
+using System.Collections;
 
 namespace learning2022.gof
 {
@@ -44,8 +46,23 @@ namespace learning2022.gof
             echo("Iterator");
             testIterator();
 
+            echo("Observer");
+            testObserver();
+
 
         }
+
+        public static void testObserver() {
+            obs.Subject subj = new obs.Subject();
+            subj.AddObserver(new obs.ConcreteObserver())
+                .AddObserver(new obs.ConcreteObserver())
+                .AddObserver(new obs.ConcreteObserver())
+                .AddObserver(new obs.ConcreteObserver())
+                .AddObserver(new obs.ConcreteObserver());
+
+            subj.NotifyAll();
+        }
+
 
         public static void testIterator() {
             Aggregate aggregate = new ConcreteAggregate();
@@ -58,8 +75,12 @@ namespace learning2022.gof
              data = iterator.Next();
              WriteLine(data);
             }
-        
-        }
+
+            //---------------------------
+            List<string> items = new List<string>(new string[] { "DATA1", "D2", "E22" });
+           
+            
+    }
 
 
         public static void testCoR() {
