@@ -32,7 +32,23 @@ namespace learning2022.gof
             echo("Composite");
             testComposite();
 
+            echo("Chain of Responsibilities");
+            testCoR();
+
         }
+
+        public static void testCoR() {
+            Handler h1 = new Handler1();
+            Handler h2 = new Handler2();
+            h1.SuccessHandler = h2;
+            h1.Handle(35);
+            echo("handle 2", "+", 30);
+            h1.Handle(25);
+            echo("handle 3", "+", 30);
+            h1.Handle(3000);
+
+        }
+
 
         public static void testComposite() {
             cst.Component comp_0 = new cst.Composite(0); // root
