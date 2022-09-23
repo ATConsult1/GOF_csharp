@@ -15,6 +15,9 @@ namespace learning2022.gof
 
             echo("Decorator");
             testDecorator();
+
+            echo("Proxy");
+            testProxy();
         }
 
 
