@@ -2,6 +2,8 @@
 using static andestech.learning2022.gof.Utils;
 using System.Text;
 using dec = learning2022.gof.decorator;
+using prx = learning2022.gof.proxy;
+
 namespace learning2022.gof
 {
 
@@ -13,9 +15,14 @@ namespace learning2022.gof
 
             echo("Decorator");
             testDecorator();
-        
         }
 
+
+        public static void testProxy() {
+            prx.Subject subj = new prx.Proxy();
+            subj.Request();
+        
+        }
 
         public static void testDecorator() {
 
