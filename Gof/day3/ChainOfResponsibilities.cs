@@ -9,7 +9,7 @@ namespace learning2022.gof
 {
 
     public abstract class Handler { 
-    public Handler? SuccessHandler { get; set; }
+    public Handler? Next { get; set; }
 
         public abstract void Handle(int n); 
     }
@@ -21,7 +21,7 @@ namespace learning2022.gof
             // ....
             if (n > 10 && n < 100) { ////
                 WriteLine("++ Handler1 try to pass next.");
-                SuccessHandler?.Handle(n);
+                Next?.Handle(n);
             }
             else WriteLine("-- End of Request: Handler1");
         }
@@ -35,7 +35,7 @@ namespace learning2022.gof
             if (n > 30 && n < 50)
             { ////
                 WriteLine("++ Handler2 try to pass next.");
-                SuccessHandler?.Handle(n);
+                Next?.Handle(n);
             }
             else WriteLine("-- End of Request: Handler2");
         }

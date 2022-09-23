@@ -5,8 +5,11 @@ using dec = learning2022.gof.decorator;
 using prx = learning2022.gof.proxy;
 using brd = learning2022.gof.bridge;
 using cst = learning2022.gof.composite;
+using en = learning2022.gof.enumerator;
+using it = learning2022.gof.iterator;
 using learning2022.gof.bridge;
 using learning2022.gof.composite;
+using learning2022.gof.iterator;
 
 namespace learning2022.gof
 {
@@ -35,18 +38,45 @@ namespace learning2022.gof
             echo("Chain of Responsibilities");
             testCoR();
 
+            echo("Test dotnet Enumerator");
+            testEnumerator();
+
+            echo("Iterator");
+            testIterator();
+
+
         }
+
+        public static void testIterator() {
+            Aggregate aggregate = new ConcreteAggregate();
+            Iterator iterator = aggregate.CreateIterator();
+
+            object data = iterator.First(); WriteLine(data);
+
+            while (!iterator.IsDone())
+            { 
+             data = iterator.Next();
+             WriteLine(data);
+            }
+        
+        }
+
 
         public static void testCoR() {
             Handler h1 = new Handler1();
             Handler h2 = new Handler2();
-            h1.SuccessHandler = h2;
+            h1.Next = h2;
             h1.Handle(35);
             echo("handle 2", "+", 30);
             h1.Handle(25);
             echo("handle 3", "+", 30);
             h1.Handle(3000);
 
+        }
+
+        public static void testEnumerator()
+        {
+            foreach (int i in new en.Data()) Write($"{i}, "); WriteLine();
         }
 
 
